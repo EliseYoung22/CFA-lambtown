@@ -1,0 +1,19 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo center">Lambtown</a>
+    <ul id="nav-mobile" class="left hide-on-med-and-down">
+      <li><a href="/">Home</a></li>
+      <li><a href="/posts">Posts</a></li>
+      <li><%= link_to 'Create New Post', new_post_path %>
+      <% if user_signed_in? %>
+      <li>
+      <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+      </li>
+      <% else %>
+      <li>
+      <%= link_to('Login', new_user_session_path)  %>
+      </li>
+    <% end %>
+    </ul>
+  </div>
+</nav>
